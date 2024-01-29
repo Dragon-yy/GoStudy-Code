@@ -1,10 +1,19 @@
-// 打印每个参数的索引和值，每个一行。
+// 打印 os.Args[0] ，即被执行命令本身的名字
 package main
 
 import "os"
 
-func main() {
+func echo1() {
+	println(os.Args[0])
+}
+
+func echo2() {
 	for i := range os.Args[1:] {
 		println(i, os.Args[i+1])
 	}
+}
+
+func main() {
+	//echo1()
+	echo2()
 }
